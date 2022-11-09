@@ -1,0 +1,18 @@
+---
+- name: Download the artifact
+  maven_artifact:
+    group_id: in.shan5a6
+    artifact_id: myweb
+    repository_url: 'http://107.21.167.81/repository/app1-repo/'
+    extension: war
+    version: "{{ artifact_version }}"
+    username: "{{ nexus_user }}"
+    password: "{{ nexus_password }}"
+    dest: /opt/tomcat/webapps/
+
+- name: Restart tomcat
+  systemd:
+    name: tomcat-service
+    state: restarted
+    
+

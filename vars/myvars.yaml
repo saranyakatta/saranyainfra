@@ -2,3 +2,5 @@
 tomcat_version: 8.5.83
 env: ""
 artifact_version: ""
+nexus_user: ""
+nexus_password: ""
